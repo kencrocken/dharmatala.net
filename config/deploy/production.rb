@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server '104.131.7.48', user: 'deployer', roles: %w{web app}
+server '104.131.7.48', user: 'deployer', port: 4444, roles: %w{web}
 # server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
@@ -18,9 +18,9 @@ server '104.131.7.48', user: 'deployer', roles: %w{web app}
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :app, %w{deployer@deployer@104.131.7.48:4444}
-role :web, %w{deployer@deployer@104.131.7.48:4444}
-role :db,  %w{deployer@deployer@104.131.7.48:4444}
+
+role :web, %w{deployer@104.131.7.48:4444}
+
 
 
 

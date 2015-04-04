@@ -13,6 +13,7 @@ set :deploy_to, '/home/deployer/dharmatala/current'
 # Default value for :scm is :git
 set :scm, :git
 
+
 # Default value for :format is :pretty
 # set :format, :pretty
 
@@ -37,9 +38,9 @@ set :scm, :git
 set :format, :pretty
 namespace :deploy do
     task :update_jekyll do
-        on roles(:app) do
-            within "#{deploy_to}/current" do
-                execute :jekyll, "build"
+        on roles :web do
+            within release_path do
+                execute '/home/deployer/.rbenv/versions/2.2.1/bin/jekyll', "build"
             end
         end
     end
