@@ -1,16 +1,40 @@
+body, html {
+    height:100%;
+}
+.site-wrapper {
+    position: relative;
+    height: 100%;
+}
 /**
  * Site header
  */
+.background {
+    display: block;
+    height: 100%;
+    background: url("../images/dharmatala.jpg") no-repeat top center;
+    background-size: cover;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        @include linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 100%);
+    }
+ }
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
+    // border-top: 5px solid $grey-color-dark;
+    // border-bottom: 1px solid $grey-color-light;
+    // min-height: 56px;
+    // height: 100%;
+    // // Positioning context for the mobile navigation icon
+    // position: relative;
+    // z-index: 1;
 }
 
 .site-title {
+    color: white;
     font-size: 26px;
     line-height: 56px;
     letter-spacing: -1px;
