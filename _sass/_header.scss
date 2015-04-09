@@ -29,25 +29,32 @@ header.site-header {
     padding: 0 em(12);
     color: white;
     h1{
-        text-transform: uppercase;
-        font-family: $monospace;
+        // text-transform: uppercase;
+        // font-family: $monospace;
         margin-bottom: 0;
-        // text-shadow: 1px 1px #000;
+        text-shadow: 1px 1px #000;
     }
     .site-tag {
-    // text-shadow: 1px 1px #000;
+    text-shadow: 1px 1px #000;
     }
 }
 .call-to-action {
     position: absolute;
     bottom: 20px;
     left: 50%;
-    // -webkit-transform: translate(-50%, 0);
-    //     -ms-transform: translate(-50%, 0);
-    //         transform: translate(-50%, 0);
+            text-align: center;
     @include transform(translate(-50%,0));
-    color: white;
-    font-size: 5em;
+    a {
+        font-size: em(21);
+
+        color: rgba(255,255,255,0.5);
+        &:hover {
+            color: rgba(255,255,255,1);
+        }
+        i {
+            font-size: 1.7em;
+        }
+    }
 }
 
 .social-links {
