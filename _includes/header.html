@@ -8,6 +8,15 @@
 <!--     <div class="recent-post">
       <h1>{{ post.title }}</h1>
     </div> -->
+    <div class="social-links">
+      <ul class="social-links-list">
+        <li><a href="https://twitter.com/{{ site.twitter_username }}"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss-square"></i></a></li>
+      </ul>
+    </div>
+    <div class="call-to-action">
+      <i class="fa fa-angle-down"></i>
+    </div>
   </div>
 </header>
 
