@@ -1,0 +1,52 @@
+/**
+ * Site header
+ */
+header.site-header {
+    position: relative;
+    display: block;
+    height: 100%;
+    background: url("../images/dharmatala.jpg") no-repeat top center;
+    background-size: cover;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        @include linear-gradient(180deg, rgba(0,0,0, 0) 0%, rgba(0,0,0, .65) 100%);
+    }
+}
+
+.banner {
+    @include outer-container();
+}
+
+.site-title {
+    // position: absolute;
+    // top: 50%;
+    // bottom: 50px;
+    padding: 0 em(12);
+    color: white;
+    h1{
+        text-transform: uppercase;
+        font-family: $monospace;
+        margin-bottom: 0;
+        // text-shadow: 1px 1px #000;
+    }
+    .site-tag {
+    // text-shadow: 1px 1px #000;
+    }
+}
+.recent-post {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    color: white;
+    h1{
+        text-transform: uppercase;
+        font-family: $monospace;
+        margin-bottom: 0;
+    }
+}
+

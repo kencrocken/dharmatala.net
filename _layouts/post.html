@@ -1,11 +1,22 @@
 ---
 layout: default
 ---
+{% assign author = site.data.authors[page.author] %}
+
 <div class="post">
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    {% if author %}
+            <span>
+                <!-- Mugshot. -->
+                <img src="{{ author.email | get_gravatar }}" alt="A photo of {{ author.name }}" />
+
+                <!-- Personal Info. -->
+                Written by <a href="{{ author.web }}" target="_blank">{{ author.name }}</a>
+            </span>
+        {% endif %}
   </header>
 
   <article class="post-content">
