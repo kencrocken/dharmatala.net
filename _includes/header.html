@@ -1,22 +1,8 @@
-<!-- {% assign post = site.posts.first %} -->
-<header class="site-header">
-  <div class="banner">
-    <div class="site-title">
-      <h1>{{ site.title }}</h1>
-      <p class="site-tag">{{ site.description }}</p>
-    </div>
-<!--     <div class="recent-post">
-      <h1>{{ post.title }}</h1>
-    </div> -->
-    <div class="social-links">
-      <ul class="social-links-list">
-        <li><a href="https://twitter.com/{{ site.twitter_username }}"><i class="fa fa-twitter-square"></i></a></li>
-        <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss-square"></i></a></li>
-      </ul>
-    </div>
-    <div id="CTA" class="call-to-action">
-      <a href="#journal">Read Journal<br><i class="fa fa-angle-down"></i></a> 
+<header class="page-header">
+  <div class="page-banner">
+    <h5 class="page-heading"><a href="/">{{ site.title }}</a></h5>
+    <div class="social-links-page-header">
+        {% include social-links.html %}
     </div>
   </div>
 </header>
-

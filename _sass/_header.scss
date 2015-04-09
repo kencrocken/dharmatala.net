@@ -1,5 +1,5 @@
 /**
- * Site header
+ * Home-Header
  */
 header.site-header {
     position: relative;
@@ -30,7 +30,7 @@ header.site-header {
     color: white;
     h1{
         // text-transform: uppercase;
-        // font-family: $monospace;
+        font-family: $crushed;
         margin-bottom: 0;
         text-shadow: 1px 1px #000;
     }
@@ -57,21 +57,37 @@ header.site-header {
     }
 }
 
-.social-links {
+.social-links-header {
     position: absolute;
     right: 0;
     color: white;
-    .social-links-list {
-        li {
-            float: left;
-            padding-right: em(15);
-            a {
-                font-size: 2em;
-                color: rgba(255,255,255,.5);
-                &:hover {
-                    color: rgba(255,255,255,1);
-                }
-            }
+    a {
+        font-size: 2em;
+        color: rgba(255,255,255,.5);
+        &:hover {
+            color: rgba(255,255,255,1);
         }
     }
 }
+/**
+ * Page-Header
+ */
+ .page-header {
+    @include outer-container(100%);
+ }
+ .page-banner {
+    padding: em(3) em(12) 0;
+    .page-heading {
+        font-family: $crushed;
+        margin-bottom: 5px;
+        display: inline-block;
+        float: left;
+    }
+    .social-links-page-header{
+        ul {
+            margin-top: em(-3); 
+            padding-left: em(15);
+            float: right;
+        }
+    }
+ }

@@ -1,0 +1,11 @@
+footer.site-footer {
+    @include outer-container(100%);
+}
+
+.footer-banner {
+    padding: em(25) em(12) 0;
+    .footer-heading {
+        font-family: $crushed;
+        margin-bottom: 5px;
+    }
+}

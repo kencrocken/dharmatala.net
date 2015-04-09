@@ -8,7 +8,7 @@ tags: ["test"]
 ##Test
 
 This is a test post.  I started it with a rake command.
-
+<!--more-->
 {% highlight ruby linenos %}
 require "rubygems"
 require 'rake'

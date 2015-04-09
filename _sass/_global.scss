@@ -5,34 +5,29 @@ body, html {
     position: relative;
     height: 100%;
 }
+
 /**
  * Page content
  */
 .page-content {
-    // padding: $spacing-unit 0;
+    @include outer-container();
 }
 
 .page-heading {
     font-size: 20px;
 }
 
-.post-list {
-    margin-left: 0;
-    list-style: none;
-
-    > li {
-        // margin-bottom: $spacing-unit;
+/**
+ * Social-Links-List
+ */
+.social-links-list {
+    li {
+        float: left;
+        padding-right: em(15);
+        a {
+            transition: color 0.1s linear;
+        }
     }
-}
-
-.post-meta {
-    font-size: em(14);
-    color: $light-gray;
-}
-
-.post-link {
-    display: block;
-    font-size: 24px;
 }
 
 /**

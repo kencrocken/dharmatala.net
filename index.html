@@ -1,31 +1,29 @@
 ---
-layout: default
+layout: home
 ---
 <div id="journal" class="home">
 
-  <h1 class="page-heading">Posts</h1>
+<!--   <h1 class="page-heading">Journal</h1> -->
 
   <ul class="post-list">
     {% for post in site.posts %}
     {% assign author = site.data.authors[post.author] %}
       <li>
-        <h2>
+        <h3>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        </h3>
         {% if author %}
-        <span>
-          <!-- Mugshot. -->
-          <img src="{{ author.email | get_gravatar }}" alt="A photo of {{ author.name }}" style="border-radius:50%;"/>
-        </span>
-        <span class="post-meta"><a href="{{ author.web }}" target="_blank">{{ author.name }}</a></span>
-        
-            
+          <span class="gravatar">
+            <img src="{{ author.email | get_gravatar:'35' }}" alt="A photo of {{ author.name }}" style="border-radius:50%;"/>
+          </span>
+          <span class="post-meta"><a href="{{ author.web }}" target="_blank">{{ author.name }}</a> • </span>   
         {% endif %}
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        {{ post.excerpt }}
       </li>
     {% endfor %}
   </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <div class="social-links-home">
+    {% include social-links.html %}
+  </div>
 </div>

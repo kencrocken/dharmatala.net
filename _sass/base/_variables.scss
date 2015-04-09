@@ -1,14 +1,13 @@
 // Typography
 @import url(http://fonts.googleapis.com/css?family=Crushed);
-@import url(http://fonts.googleapis.com/css?family=Poiret+One);
 @import url(http://fonts.googleapis.com/css?family=News+Cycle);
-$poiret: 'Poiret One', sans-serif;
+
 $crushed: 'Crushed', cursive;
 $news-cycle:'News Cycle', sans-serif;
 $sans-serif: $helvetica;
 $serif: $georgia;
 $base-font-family: $news-cycle;
-$heading-font-family: $crushed;
+$heading-font-family: $base-font-family;
 
 // Font Sizes
 $base-font-size: 1em;

@@ -1,0 +1,42 @@
+.home {
+    padding: em(25) em(12);
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: em(10);
+    }
+    h3 {
+        font-family: $news-cycle;
+        margin-bottom: em(3);
+    }
+}
+.gravatar {
+    padding-right: 5px;
+    img {
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+}
+.post-meta {
+    font-size: em(14);
+    color: darken($light-gray, 15%);
+}
+
+.post-link {
+    display: block;
+    font-size: 24px;
+}
+
+.social-links-home {
+    a {
+        font-size: 2em;
+        color: rgba(0,0,0,.5);
+        &:hover {
+            color: rgba(0,0,0,1);
+        }
+    }
+}
