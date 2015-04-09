@@ -4,23 +4,24 @@ layout: default
 {% assign author = site.data.authors[page.author] %}
 
 <div class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  <section class="type-system-geometric">
+    <header class="post-header">
+      <p class="type">Article Type</p>
+      <h1>{{ page.title }}</h1>
+      <h2>{{ content | lead_in:"lead" | strip_html }}</h2>
+      <p class="date">{{ page.date | date: "%b %-d, %Y" }}</p>
+    </header>
+    <article class="post-content">
+      {{ content | lead_in:"remaining"}}
+      <hr>
+    </article>
     {% if author %}
-            <span>
-                <!-- Mugshot. -->
-                <img src="{{ author.email | get_gravatar }}" alt="A photo of {{ author.name }}" />
-
-                <!-- Personal Info. -->
-                Written by <a href="{{ author.web }}" target="_blank">{{ author.name }}</a>
-            </span>
-        {% endif %}
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-
+    <div class="post-author-info">
+      <span class="gravatar">
+        <img src="{{ author.email | get_gravatar:'75' }}" alt="A photo of {{ author.name }}" style="border-radius:50%;"/>
+      </span>
+      <span><a href="{{ author.web }}" target="_blank">{{ author.name }}</a></span> 
+      </div>  
+    {% endif %}
+  </section>
 </div>

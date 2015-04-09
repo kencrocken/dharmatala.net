@@ -1,7 +1,7 @@
 # Site settings
 title: Dharmatala
 email: kenny.namgyal@gmail.com
-description: Journal for householder practictioners of Karma Kagyu Tibetan Buddhism
+description: A journal for householder practictioners of Karma Kagyu Tibetan Buddhism
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://dharmatala.net" # the base hostname & protocol for your site
 

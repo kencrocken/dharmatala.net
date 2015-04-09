@@ -1,11 +1,12 @@
 // Typography
 @import url(http://fonts.googleapis.com/css?family=Crushed);
 @import url(http://fonts.googleapis.com/css?family=News+Cycle);
-
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
 $crushed: 'Crushed', cursive;
 $news-cycle:'News Cycle', sans-serif;
+$droid-serif: 'Driod Serif', serif;
 $sans-serif: $helvetica;
-$serif: $georgia;
+$serif: $droid-serif;
 $base-font-family: $news-cycle;
 $heading-font-family: $base-font-family;
 
