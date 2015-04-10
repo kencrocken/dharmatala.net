@@ -7,12 +7,14 @@
     list-style: none;
 
     > li {
-        margin-bottom: em(10);
+        margin-bottom: em(40);
+        > p { margin-top: em(10); }
     }
     h3 {
         font-family: $news-cycle;
         margin-bottom: em(3);
     }
+
 }
 .gravatar {
     padding-right: 5px;

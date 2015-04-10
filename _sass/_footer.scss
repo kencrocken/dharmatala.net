@@ -1,6 +1,14 @@
 footer.site-footer {
     @include outer-container(100%);
+    background-color: $light-gray;
+    height: 10em;
+    // position: absolute;
+    // left: 0;
+    // bottom: 0;
+    // height: 100px;
+    // width: 100%;
 }
+
 
 .footer-banner {
     padding: em(25) em(12) 0;

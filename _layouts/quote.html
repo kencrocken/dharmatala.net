@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign author = site.data.authors[page.author] %}
+
 
 <div class="post">
   <section class="type-system-geometric">
@@ -11,20 +11,12 @@ layout: default
       {% endif %}
       <p class="date">{{ page.date | date: "%b %-d, %Y" }}</p>
       <h1>{{ page.title }}</h1>
-      <h2>{{ content | lead_in:"lead" | strip_html }}</h2>
     </header>
     <article class="post-content">
-      {{ content | lead_in:"remaining"}}
+      {{ content }}
       <hr>
     </article>
-    {% if author %}
-    <div class="post-author-info">
-      <span class="gravatar">
-        <img src="{{ author.email | get_gravatar:'75' }}" alt="A photo of {{ author.name }}" style="border-radius:50%;"/>
-      </span>
-      <span><a href="{{ author.web }}" target="_blank">{{ author.name }}</a></span> 
-      </div>  
-    {% endif %}
+
   </section>
 </div>
 {% if page.comments %}

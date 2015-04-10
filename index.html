@@ -18,12 +18,11 @@ layout: home
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         {% if post.comments %}
           <span class="post-meta">
-            <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{ post.url }}">Comments</a>
+            <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{ post.url }}"></a>
           </span>
         {% endif %}
         {{ post.excerpt }}
       </li>
-      <hr>
     {% endfor %}
   </ul>
 </div>

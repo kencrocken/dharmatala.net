@@ -82,7 +82,7 @@ section.type-system-geometric {
         font-style: italic;
         font-weight: 400;
         line-height: 1.4em;
-        margin-bottom: 0.2em;
+        margin-bottom: 1.3em;
 
         @include media($medium-screen) {
           font-size: 1.3em;
@@ -101,7 +101,6 @@ section.type-system-geometric {
   }
 
   h3 {
-    font-family: $serif;
     font-size: 1.4em;
     font-weight: 400;
     line-height: 1.3em;
@@ -110,7 +109,6 @@ section.type-system-geometric {
 
   p.date {
     color: transparentize($base-font-color, 0.6);
-    font-family: $serif;
     font-size: 0.9em;
     font-style: italic;
     margin-bottom: 0.3em;
