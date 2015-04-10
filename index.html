@@ -19,6 +19,11 @@ layout: home
           <span class="post-meta"><a href="{{ author.web }}" target="_blank">{{ author.name }}</a> • </span>   
         {% endif %}
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        {% if post.comments %}
+          <span class="post-meta">
+            <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread" data-disqus-identifier="{{ post.url }}"></a>
+          </span>
+        {% endif %}
         {{ post.excerpt }}
       </li>
     {% endfor %}
