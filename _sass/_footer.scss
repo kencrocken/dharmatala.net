@@ -7,5 +7,18 @@ footer.site-footer {
     .footer-heading {
         font-family: $crushed;
         margin-bottom: 5px;
+        display: inline-block;
+        float: left;
     }
+    .social-links-list {
+        display: inline-block;
+        margin-top: em(-2);
+        padding-left: 12px;
+        float: left;
+    }
+    .return-to-top {
+        margin-top: em(-2);
+        float: right;
+    }
+    p { clear: both;}
 }

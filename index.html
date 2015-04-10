@@ -2,9 +2,6 @@
 layout: home
 ---
 <div id="journal" class="home">
-
-<!--   <h1 class="page-heading">Journal</h1> -->
-
   <ul class="post-list">
     {% for post in site.posts %}
     {% assign author = site.data.authors[post.author] %}
@@ -21,14 +18,12 @@ layout: home
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         {% if post.comments %}
           <span class="post-meta">
-            <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread" data-disqus-identifier="{{ post.url }}"></a>
+            <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{ post.url }}">Comments</a>
           </span>
         {% endif %}
         {{ post.excerpt }}
       </li>
+      <hr>
     {% endfor %}
   </ul>
-  <div class="social-links-home">
-    {% include social-links.html %}
-  </div>
 </div>

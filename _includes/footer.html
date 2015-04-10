@@ -1,6 +1,10 @@
 <footer class="site-footer">
   <div class="footer-banner">
     <h5 class="footer-heading">{{ site.title }}</h5>
+    {% include social-links.html %}
+    <ul class="return-to-top">
+      <li><a href="#top"><i class="fa fa-chevron-circle-up"></i></a></li>
+    </ul>
     <p class="site-tag">{{ site.description }}</p>
   </div>
 </footer>

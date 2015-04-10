@@ -6,7 +6,9 @@ layout: default
 <div class="post">
   <section class="type-system-geometric">
     <header class="post-header">
-      <p class="type">Article Type</p>
+      {% if page.category %}
+        <p class="type">{{ page.category }}</p>
+      {% endif %}
       <h1>{{ page.title }}</h1>
       <h2>{{ content | lead_in:"lead" | strip_html }}</h2>
       <p class="date">{{ page.date | date: "%b %-d, %Y" }}</p>
