@@ -1,8 +1,8 @@
 ---
 layout: quote
-title: "Short Post With Comments"
+title: "Trungpa on the Journey"
 description: ""
-category: "test"
+category: "quote"
 tags: []
 comments: true
 ---

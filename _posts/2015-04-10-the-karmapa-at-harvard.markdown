@@ -1,6 +1,6 @@
 ---
 layout: quote
-title: "Just a video"
+title: "The Karmapa at Harvard"
 description: ""
 category: "video"
 comments: true
