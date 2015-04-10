@@ -4,8 +4,8 @@ title: "A Lorem Ipsum Test Post"
 description: ""
 category: 
 tags: []
-comments:true
-author:karma_tashi_namgyal
+comments: true
+author: karma_tashi_namgyal
 ---
 
 Lorem markdownum relevare primordia saeva. Scopulis madidos minari dure et nuda
