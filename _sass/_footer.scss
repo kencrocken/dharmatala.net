@@ -1,6 +1,6 @@
 footer.site-footer {
     @include outer-container(100%);
-    background-color: $light-gray;
+    background-color: $tibetan-red;
     height: 10em;
     // position: absolute;
     // left: 0;
@@ -17,6 +17,7 @@ footer.site-footer {
         margin-bottom: 5px;
         display: inline-block;
         float: left;
+        color: white;
     }
     .social-links-list {
         display: inline-block;
@@ -28,5 +29,11 @@ footer.site-footer {
         margin-top: em(-2);
         float: right;
     }
-    p { clear: both;}
+    p { clear: both; color: white; }
+    a {
+        color: rgba(255,255,255,.65);
+        &:hover {
+          color: rgba(255,255,255,1);  
+        }
+    }
 }
