@@ -2,20 +2,21 @@
 layout: home
 ---
 <div id="journal" class="home">
-  <ul class="post-list">
+  <ul class="post-list" itemscope itemType="http://schema.org/BlogPosting">
     {% for post in site.posts %}
     {% assign author = site.data.authors[post.author] %}
       <li>
-        <h3>
+        <h3 itemprop="headline">
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h3>
         {% if author %}
+        <meta itemprop="author" itemscope itemtype="http://schema.org/Person" />
           <span class="gravatar">
-            <img src="{{ author.email | get_gravatar:'35' }}" alt="A photo of {{ author.name }}" style="border-radius:50%;"/>
+            <img src="{{ author.email | get_gravatar:'35' }}" alt="A photo of {{ author.name }}" itemprop="image" style="border-radius:50%;"/>
           </span>
-          <span class="post-meta"><a href="{{ author.web }}" target="_blank">{{ author.name }}</a> • </span>   
+          <span class="post-meta"><a href="{{ author.web }}" target="_blank" itemprop="name">{{ author.name }}</a> • </span>   
         {% endif %}
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="post-meta" itemprop="datePublished" content="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span>
         {% if post.comments %}
           <span class="post-meta">
             <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{ post.url }}"></a>

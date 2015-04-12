@@ -3,27 +3,27 @@ layout: default
 ---
 {% assign author = site.data.authors[page.author] %}
 
-<div class="post">
+<div class="post" itemscope itemType="http://schema.org/BlogPosting">
   <section class="type-system-geometric">
     <header class="post-header">
       {% if page.category %}
         <p class="type">{{ page.category }}</p>
       {% endif %}
-      <p class="date">{{ page.date | date: "%b %-d, %Y" }}</p>
-      <h1>{{ page.title }}</h1>
-      <h2>{{ content | lead_in:"lead" | strip_html }}</h2>
+      <p class="date" itemprop="datePublished" content="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</p>
+      <h1 itemprop="headline">{{ page.title }}</h1>
+      <h2 itemprop="description">{{ content | lead_in:"lead" | strip_html }}</h2>
     </header>
-    <article class="post-content">
+    <article class="post-content" itemprop="articleBody">
       {{ content | lead_in:"remaining"}}
       <hr>
     </article>
     {% if author %}
-    <div class="post-author-info">
+    <div class="post-author-info" itemprop="author" itemscope itemtype="http://schema.org/Person">
       <span class="gravatar">
-        <img src="{{ author.email | get_gravatar:'75' }}" alt="A photo of {{ author.name }}" style="border-radius:50%;"/>
+        <img src="{{ author.email | get_gravatar:'75' }}" alt="A photo of {{ author.name }}" itemprop="image" style="border-radius:50%;"/>
       </span>
-      <span><a href="{{ author.web }}" target="_blank">{{ author.name }}</a></span> 
-      </div>  
+      <span itemprop="name"><a href="{{ author.web }}" target="_blank">{{ author.name }}</a></span> 
+    </div>  
     {% endif %}
   </section>
 </div>
