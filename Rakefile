@@ -7,6 +7,7 @@ require 'google_url_shortener'
 
 require File.join(File.dirname(__FILE__), 'env')
 
+
 SOURCE = "."
 CONFIG = {
   'layouts' => File.join(SOURCE, "_layouts"),
@@ -54,24 +55,33 @@ end
 
 desc "Tweet last post"
 task :tweet do
+  content = ENV["content"] || ""
+  hashtags = ENV["hashtags"] || ""
+
+  url = "http://dharmatala.net"
 
   posts = []
   Dir.foreach('./_posts') do |post|
     next if post == '.' || post =='..'
     posts << post
   end
+
+  front_matter = YAML.load_file("./_posts/#{posts.reverse[0]}")
+  url = !front_matter["category"].empty? ? "#{url}/#{front_matter["category"]}" : url
+
   last_post_file = posts.reverse[0].gsub(/.markdown/,'')
   last_post_split = last_post_file.split('-',4)
   slug = last_post_split.join('/')
-  slug = "http://kencrocken.github.io/#{slug}"
+  long_url = "#{url}/#{slug}"
+
   post_title = last_post_split[3].gsub(/[-]/,' ')
   post_title = post_title.gsub(/\w+/) {|word| word.capitalize}
+
   puts post_title
   puts slug
 
-  Google::UrlShortener::Base.api_key = "#{API_KEY}"
-  url = Google::UrlShortener::Url.new(:long_url => "#{slug}")
-  short_url = url.shorten!
+  Google::UrlShortener::Base.api_key = "#{GOOGLE_API_KEY}"
+  short_url = Google::UrlShortener.shorten!(:long_url => "#{long_url}")
   puts short_url
 
   client = Twitter::REST::Client.new do |config|
@@ -81,9 +91,14 @@ task :tweet do
     config.access_token_secret = "#{ACCESS_TOKEN_SECRET}"
   end
 
-  client.update("#{post_title} #{short_url}")
+  tweet = "#{content} // #{post_title} #{short_url} #{hashtags}"
+  count = tweet.length
+
+  puts "Your tweet is #{count} characters long."
+  if count > 140
+    abort "Your tweet is too long. You have #{count} characters - it must be 140 or less."
+  else
+    puts tweet
+    client.update(tweet)
+  end
 end
-
-
-
-
