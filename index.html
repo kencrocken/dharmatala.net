@@ -14,7 +14,7 @@ layout: home
           <span class="gravatar">
             <img src="{{ author.email | get_gravatar:'35' }}" alt="A photo of {{ author.name }}" itemprop="image" style="border-radius:50%;"/>
           </span>
-          <span class="post-meta" itemprop="name"><a href="{{ author.web }}" target="_blank">{{ author.name }}</a> • </span> 
+          <span class="post-meta" itemprop="name"><a href="{{ author.web }}" target="_blank">{{ author.name }}</a></span><span> • </span> 
         </div>  
         {% endif %}
         <span class="post-meta" itemprop="datePublished" content="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span>
