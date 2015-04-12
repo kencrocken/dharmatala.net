@@ -72,16 +72,16 @@ task :tweet do
   last_post_file = posts.reverse[0].gsub(/.markdown/,'')
   last_post_split = last_post_file.split('-',4)
   slug = last_post_split.join('/')
-  long_url = "#{url}/#{slug}"
+  long_url = "#{url.downcase}/#{slug}"
 
   post_title = last_post_split[3].gsub(/[-]/,' ')
   post_title = post_title.gsub(/\w+/) {|word| word.capitalize}
 
   puts post_title
-  puts slug
+  puts long_url
 
   Google::UrlShortener::Base.api_key = "#{GOOGLE_API_KEY}"
-  short_url = Google::UrlShortener.shorten!(:long_url => "#{long_url}")
+  short_url = Google::UrlShortener.shorten!("#{long_url}")
   puts short_url
 
   client = Twitter::REST::Client.new do |config|
