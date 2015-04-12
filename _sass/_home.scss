@@ -8,6 +8,7 @@
 
     > li {
         margin-bottom: em(40);
+        > div { display: inline-block; }
         > p { margin-top: em(10); }
     }
     h3 {
