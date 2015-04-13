@@ -16,8 +16,8 @@ module Jekyll
 
       source = "<div class=\"video\">"
 
-      source += "<div class=\"video-wrapper\" itemprop=\"video\">"
-      source += "<iframe width=\"640\" height=\"480\" src=\"//www.youtube.com/embed/#{@url}?rel=0\" frameborder=\"0\" allowfullscreen></iframe>"
+      source += "<div class=\"video-wrapper\">"
+      source += "<iframe itemprop=\"video\" width=\"640\" height=\"480\" src=\"//www.youtube.com/embed/#{@url}?rel=0\" frameborder=\"0\" allowfullscreen></iframe>"
       source += "</div>"
       source += "</div>"
 
