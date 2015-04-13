@@ -2,7 +2,7 @@
 layout: home
 ---
 <div id="journal" class="home">
-  <ul class="post-list" itemprop="mainContentOfPage" itemscope itemType="http://schema.org/Blog">
+  <ul class="post-list" itemscope itemType="http://schema.org/Blog">
     {% for post in site.posts %}
     {% assign author = site.data.authors[post.author] %}
       <li itemscope itemprop="blogPost" itemType="http://schema.org/BlogPosting">
