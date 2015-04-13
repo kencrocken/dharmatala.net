@@ -5,13 +5,13 @@ layout: default
 
 <div class="post" itemscope itemType="http://schema.org/BlogPosting">
   <section class="type-system-geometric">
-    <header class="post-header">
+    <header class="post-header" itemprop="description">
       {% if page.category %}
-        <p class="type">{{ page.category }}</p>
+        <p class="type" itemprop="category">{{ page.category }}</p>
       {% endif %}
       <p class="date" itemprop="datePublished" content="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</p>
       <h1 itemprop="headline">{{ page.title }}</h1>
-      <h2 itemprop="description">{{ content | lead_in:"lead" | strip_html }}</h2>
+      <h2 itemprop="about">{{ content | lead_in:"lead" | strip_html }}</h2>
     </header>
     <article class="post-content" itemprop="articleBody">
       {{ content | lead_in:"remaining"}}
