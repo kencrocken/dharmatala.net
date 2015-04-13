@@ -22,7 +22,7 @@ layout: default
       <span class="gravatar">
         <img src="{{ author.email | get_gravatar:'75' }}" alt="A photo of {{ author.name }}" itemprop="image" style="border-radius:50%;"/>
       </span>
-      <span itemprop="name"><a href="{{ author.web }}" target="_blank">{{ author.name }}</a></span> 
+      <span itemprop="name"><a itemprop="url" href="{{ author.web }}" target="_blank">{{ author.name }}</a></span> 
     </div>  
     {% endif %}
   </section>
