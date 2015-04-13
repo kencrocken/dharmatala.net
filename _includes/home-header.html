@@ -1,15 +1,14 @@
-<!-- {% assign post = site.posts.first %} -->
-<header class="site-header">
-  <div class="banner">
+<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="banner" role="banner">
     <div class="site-title">
-      <h1>{{ site.title }}</h1>
-      <p class="site-tag">{{ site.description }}</p>
+      <h1 itemprop="headline">{{ site.title }}</h1>
+      <p class="site-tag" itemprop="description">{{ site.description }}</p>
     </div>
     <div class="social-links-header">
       {% include social-links.html %}
     </div>
     <div id="CTA" class="call-to-action">
-      <a href="#journal">Journal<br><i class="fa fa-angle-down"></i></a> 
+      <a href="#journal" itemprop="url">Journal<br><i class="fa fa-angle-down"></i></a> 
     </div>
   </div>
 </header>
