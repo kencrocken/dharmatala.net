@@ -4,7 +4,7 @@ layout: default
 {% assign author = site.data.authors[page.author] %}
 
 <div class="post" itemscope itemType="http://schema.org/BlogPosting">
-  <section class="type-system-geometric">
+  <section class="main type-system-geometric">
     <header class="post-header" itemprop="description">
       {% if page.category %}
         <p class="type" itemprop="category">{{ page.category }}</p>
@@ -25,6 +25,9 @@ layout: default
       <span itemprop="name"><a itemprop="url" href="{{ author.web }}" target="_blank">{{ author.name }}</a></span> 
     </div>  
     {% endif %}
+  </section>
+  <section class="side-bar">
+    {% include sidebar.html %}
   </section>
 </div>
 {% if page.comments %}

@@ -3,7 +3,27 @@
  */
 .post{
     @include outer-container();
+    position: relative; // For Stickem
+    section.main {
+      @include span-columns(12);
+    }
+    section.side-bar {
+      padding-left: em(12);
+      padding-top: em(25);
+      @include span-columns(12);
+    }
+    @include media($large-screen) {
+      section.main {
+        @include span-columns(8);
+      }
+      section.side-bar {
+        padding-left: 0;
+        padding-top: em(120);
+        @include span-columns(4);
+      }
+    }
  }
+
 .post-header, .post-content, .post-author-info{
     padding: 0 em(12);
 }
@@ -147,4 +167,34 @@ section.type-system-geometric {
   p.author {
     font-family: $sans-serif;
   }
+}
+
+.side-bar {
+  h4 { font-weight: 300; }
+  li {
+    padding-bottom: 10px;
+    h3 { 
+      margin-bottom: 0; 
+      display: inline-block;
+      .post-link {
+        font-size: em(10);
+      }
+    }
+    > span {
+      display: inline-block;
+    }
+  }
+}
+
+/**
+ * Stickem Styles
+ */
+.stickit {
+    position: fixed;
+    top: 2.5em;
+}
+
+.stickit-end {
+    bottom: 70px;
+    position: absolute;
 }

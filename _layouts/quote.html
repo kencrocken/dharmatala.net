@@ -4,7 +4,7 @@ layout: default
 
 
 <div class="post">
-  <section class="type-system-geometric" itemscope itemType="http://schema.org/BlogPosting">
+  <section class="main type-system-geometric" itemscope itemType="http://schema.org/BlogPosting">
     <header class="post-header">
       {% if page.category %}
         <p class="type" itemprop="description">{{ page.category }}</p>
@@ -17,6 +17,9 @@ layout: default
       <hr>
     </article>
 
+  </section>
+  <section class="side-bar">
+    {% include sidebar.html %}
   </section>
 </div>
 {% if page.comments %}
