@@ -15,7 +15,6 @@ module Jekyll
     def render(context)
 
       source = "<div class=\"video\" itemprop=\"video\" itemscope itemtype=\"http://schema.org/VideoObject\">"
-
       source += "<div class=\"video-wrapper\">"
       source += "<iframe itemprop=\"embedUrl\" width=\"640\" height=\"480\" src=\"//www.youtube.com/embed/#{@url}?rel=0\" frameborder=\"0\" allowfullscreen></iframe>"
       source += "</div>"
