@@ -6,6 +6,10 @@ category: "Article"
 tags: []
 author: karma_tashi_namgyal
 comments: true
+image:
+  feature: http://upload.wikimedia.org/wikipedia/commons/9/9a/Five_disciples_at_Sarnath.jpg
+  credit: wikiCommons
+  creditlink: http://en.wikipedia.org/wiki/Sarnath#/media/File:Five_disciples_at_Sarnath.jpg
 ---
 For me at the easiest definition of a householder in the vajrayana is someone who has a job, buys groceries, pay taxes, is in relationships, has childern, participates leisure activities, etc ... Broadly, I think we can say non-monastics.
 

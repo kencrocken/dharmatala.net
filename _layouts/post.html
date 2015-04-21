@@ -3,6 +3,7 @@ layout: default
 ---
 {% assign author = site.data.authors[page.author] %}
 
+
 <div class="post" itemscope itemType="http://schema.org/BlogPosting">
   <section class="main type-system-geometric">
     <header class="post-header" itemprop="description">
@@ -11,16 +12,22 @@ layout: default
       {% endif %}
       <p class="date" itemprop="datePublished" content="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</p>
       <h1 itemprop="headline">{{ page.title }}</h1>
+      {% if page.image.feature %}
+        <div class="entry-image backing-img" style="background-image: url('{{ page.image.feature }}')"></div>
+      {% endif %}
       <h2 itemprop="about">{{ content | lead_in:"lead" | strip_html }}</h2>
     </header>
     <article class="post-content" itemprop="articleBody">
       {{ content | lead_in:"remaining"}}
+    {% if page.image.credit%}
+      <span class="post-meta"><a href="{{ page.image.creditlink }}" target="_blank">Photo: {{ page.image.credit }}</a></span>
+    {% endif %}
       <hr>
     </article>
     {% if author %}
     <div class="post-author-info" itemprop="author" itemscope itemtype="http://schema.org/Person">
       <span class="gravatar">
-        <img src="{{ author.email | get_gravatar:'75' }}" alt="A photo of {{ author.name }}" itemprop="image" style="border-radius:50%;"/>
+        <img src="{{ author.email | get_gravatar:'75' }}" alt="A photo of {{ author.name }}" itemprop="image"/>
       </span>
       <span itemprop="name"><a itemprop="url" href="{{ author.web }}" target="_blank">{{ author.name }}</a></span> 
     </div>  

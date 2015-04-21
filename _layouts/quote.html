@@ -12,8 +12,14 @@ layout: default
       <p class="date" itemprop="datePublished" content="{{ page.date }}">{{ page.date | date: "%b %-d, %Y" }}</p>
       <h1 itemprop="headline">{{ page.title }}</h1>
     </header>
+    {% if page.image.feature %}
+        <div class="entry-image backing-img" style="background-image: url('{{ page.image.feature }}')"></div>
+      {% endif %}
     <article class="post-content" itemprop="articleBody">
       {{ content }}
+      {% if page.image.credit%}
+      <span class="post-meta"><a href="{{ page.image.creditlink }}" target="_blank">Photo: {{ page.image.credit }}</a></span>
+    {% endif %}
       <hr>
     </article>
 

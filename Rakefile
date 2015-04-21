@@ -4,6 +4,7 @@ require 'yaml'
 require 'time'
 require 'twitter'
 require 'google_url_shortener'
+require 'open-uri'
 
 require File.join(File.dirname(__FILE__), 'env')
 
@@ -57,6 +58,7 @@ desc "Tweet last post"
 task :tweet do
   content = ENV["content"] || ""
   hashtags = ENV["hashtags"] || ""
+  images = ENV["images"] || ""
 
   url = "http://dharmatala.net"
 
@@ -94,11 +96,28 @@ task :tweet do
   tweet = "#{content} // #{post_title} #{short_url} #{hashtags}"
   count = tweet.length
 
-  puts "Your tweet is #{count} characters long."
+  if !images.empty?
+    OpenURI::Buffer.send :remove_const, 'StringMax' if OpenURI::Buffer.const_defined?('StringMax')
+    OpenURI::Buffer.const_set 'StringMax', 0
+    
+    puts images
+    media = open(images)
+    client.update_with_media(tweet, media)
+  else
+    puts "Your tweet is #{count} characters long."
   if count > 140
     abort "Your tweet is too long. You have #{count} characters - it must be 140 or less."
   else
     puts tweet
     client.update(tweet)
   end
+  end
+
+  # puts "Your tweet is #{count} characters long."
+  # if count > 140
+  #   abort "Your tweet is too long. You have #{count} characters - it must be 140 or less."
+  # else
+  #   puts tweet
+  #   client.update(tweet)
+  # end
 end

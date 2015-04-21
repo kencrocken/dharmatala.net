@@ -2,7 +2,7 @@
 layout: quote
 title: "Trungpa on the Journey"
 description: ""
-category: "quote"
+category: "Quote"
 tags: []
 comments: true
 ---
