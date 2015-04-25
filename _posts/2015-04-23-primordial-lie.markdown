@@ -4,6 +4,7 @@ title: "Primordial Lie"
 description: ""
 category: "Quote"
 tags: ["Chogyam Trungpa"]
+comments: true
 image:
   feature: http://shambhalatimes.org/wp-content/themes/NewsPlusnew/images/en/top_header-vctr.jpg
   credit: Chogyam Trungpa by Shambhala.org
