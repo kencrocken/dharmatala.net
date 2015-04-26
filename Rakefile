@@ -105,19 +105,11 @@ task :tweet do
     client.update_with_media(tweet, media)
   else
     puts "Your tweet is #{count} characters long."
-  if count > 140
-    abort "Your tweet is too long. You have #{count} characters - it must be 140 or less."
-  else
-    puts tweet
-    client.update(tweet)
+    if count > 140
+      abort "Your tweet is too long. You have #{count} characters - it must be 140 or less."
+    else
+      puts tweet
+      client.update(tweet)
+    end
   end
-  end
-
-  # puts "Your tweet is #{count} characters long."
-  # if count > 140
-  #   abort "Your tweet is too long. You have #{count} characters - it must be 140 or less."
-  # else
-  #   puts tweet
-  #   client.update(tweet)
-  # end
 end
