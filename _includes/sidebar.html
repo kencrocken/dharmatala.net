@@ -1,5 +1,5 @@
-
-<ul class="side-bar-post-list">
+<section class="side-bar">
+  <ul class="side-bar-post-list">
     <li><h4>Recent Entries</h4></li>
     {% for post in site.posts %}
     {% assign author = site.data.authors[post.author] %}
@@ -11,3 +11,4 @@
       </li>
     {% endfor %}
   </ul>
+</section>

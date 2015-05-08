@@ -4,6 +4,7 @@
 .post{
     @include outer-container();
     position: relative; // For Stickem
+    min-height: 100%;
     section.main {
       @include span-columns(12);
     }
@@ -170,6 +171,7 @@ section.type-system-geometric {
 }
 
 .side-bar {
+  height: 100%;
   h4 { font-weight: 300; }
   li {
     padding-bottom: 10px;
@@ -191,7 +193,7 @@ section.type-system-geometric {
  */
 .stickit {
     position: fixed;
-    top: 2.5em;
+    // top: 2.5em;
 }
 
 .stickit-end {
