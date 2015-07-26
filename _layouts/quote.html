@@ -15,10 +15,11 @@ layout: default
     <article class="post-content" itemprop="articleBody">
       {% if page.image.feature %}
         <div class="entry-image backing-img" style="background-image: url('{{ page.image.feature }}')"></div>
+        <meta itemprop="image" content="http://dharmatala.net{{ page.image.feature }}" />
       {% endif %}
 
       {{ content }}
-
+      <meta itemprop="description" content="{{ content | strip_html }}" />
       {% if page.image.credit%}
         <span class="post-meta"><a href="{{ page.image.creditlink }}" target="_blank">Photo: {{ page.image.credit }}</a></span>
       {% endif %}
