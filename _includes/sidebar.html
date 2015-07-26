@@ -3,8 +3,8 @@
     <li><h4>Recent Entries</h4></li>
     {% for post in site.posts %}
     {% assign author = site.data.authors[post.author] %}
-      <li itemscope itemprop="blogPosts" itemType="http://schema.org/BlogPosts">
-        <h3 itemprop="headline">
+      <li>
+        <h3>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h3>
         <span class="post-meta"> • {{ post.category }}</span>
