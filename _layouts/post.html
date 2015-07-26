@@ -3,7 +3,6 @@ layout: default
 ---
 {% assign author = site.data.authors[page.author] %}
 
-
 <div class="post" itemscope itemType="http://schema.org/BlogPosting">
   <section class="main type-system-geometric">
     <header class="post-header" itemprop="description">
@@ -14,8 +13,9 @@ layout: default
       <h1 itemprop="headline">{{ page.title }}</h1>
       {% if page.image.feature %}
         <div class="entry-image backing-img" style="background-image: url('{{ page.image.feature }}')"></div>
+        <meta itemprop="image" content="http://dharmatala.net/{{ page.image.feature }}" />
       {% endif %}
-      <h2 itemprop="about">{{ content | lead_in:"lead" | strip_html }}</h2>
+      <h2 itemprop="description">{{ content | lead_in:"lead" | strip_html }}</h2>
     </header>
     <article class="post-content" itemprop="articleBody">
       {{ content | lead_in:"remaining"}}
