@@ -19,7 +19,7 @@ layout: default
       {% endif %}
 
       {{ content }}
-      <meta itemprop="description" content="{{ content | strip_html }}" />
+      <meta itemprop="description" content="{{ content | strip_html | truncate:50 }}" />
       {% if page.image.credit%}
         <span class="post-meta"><a href="{{ page.image.creditlink }}" target="_blank">Photo: {{ page.image.credit }}</a></span>
       {% endif %}
