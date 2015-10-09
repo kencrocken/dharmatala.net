@@ -49,12 +49,14 @@ task :post do
   end
 end # task :post
 
+# Usage: rake s
 desc "Begin server and watch for changes"
 task :s do
   puts "Starting ..."
   system "jekyll serve -w"
 end
 
+# Usage: rake tweet content = "" hashtags = "" images = "http://dharmatala.net/path/to/image"
 desc "Tweet last post"
 task :tweet do
   content = ENV["content"] || ""
