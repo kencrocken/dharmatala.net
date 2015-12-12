@@ -7,6 +7,7 @@ header.site-header {
     height: 100%;
     background: url("../images/dharmatala.jpg") no-repeat top center;
     background-size: cover;
+    background-attachment: fixed;
     &:before {
         content: '';
         position: absolute;
@@ -40,10 +41,14 @@ header.site-header {
     }
 }
 .call-to-action {
+    // @include radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0), $fallback: rgba(0,0,0,0.3));
+
     position: absolute;
     bottom: 20px;
     left: 50%;
-            text-align: center;
+    text-align: center;
+    border-radius: 50%;
+    padding: em(25);
     @include transform(translate(-50%,0));
     a {
         font-size: em(21);
@@ -54,6 +59,8 @@ header.site-header {
         }
         i {
             font-size: 1.7em;
+            animation: pulsate 1.5s ease-out;
+            animation-iteration-count: infinite;
         }
     }
 }
@@ -70,6 +77,16 @@ header.site-header {
         }
     }
 }
+
+/**
+* Animation
+*/
+@-webkit-keyframes pulsate {
+    0% { -webkit-transform: scale(1, 1); opacity: 0.6; }
+    50% { -webkit-transform: scale(1.5, 1.5); opacity: 1.0; }
+    100% { opacity: 0.6; -webkit-transform: scale(1, 1); }
+}
+
 /**
  * Page-Header
  */

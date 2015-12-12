@@ -6,24 +6,35 @@ layout: home
     {% for post in site.posts %}
     {% assign author = site.data.authors[post.author] %}
       <li itemscope itemprop="blogPost" itemType="http://schema.org/BlogPosting">
-        <h3 itemprop="headline">
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h3>
-        {% if author %}
-        <div itemprop="author" itemscope itemtype="http://schema.org/Person" />
-          <span class="gravatar">
-            <img src="{{ author.email | get_gravatar:'35' }}" alt="A photo of {{ author.name }}" itemprop="image"/>
-          </span>
-          <span class="post-meta" itemprop="name"><a itemprop="url" href="{{ author.web }}" target="_blank">{{ author.name }}</a></span><span> • </span> 
-        </div>  
+        <div class="headline-wrap">
+          <h3 itemprop="headline">
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h3>
+          {% if author %}
+          <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="author-wrap"/>
+            <span class="gravatar">
+              <img src="{{ author.email | get_gravatar:'35' }}" alt="A photo of {{ author.name }}" itemprop="image"/>
+            </span>
+            <span class="post-meta" itemprop="name"><a itemprop="url" href="{{ author.web }}" target="_blank">{{ author.name }}</a></span><span> • </span> 
+          </div> 
+          {% endif %}
+          <span class="post-meta" itemprop="datePublished" content="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+          {% if post.comments %}
+            <span class="post-meta">
+              <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{ post.url }}"></a>
+            </span>
+          {% endif %}
+        </div>
+        {% if post.image %}
+          <div class="post-list-image">
+            <div class="background" style="background-image: url('{{ post.image.feature }}')"></div>
+            <meta itemprop="image" content="http://dharmatala.net/{{ post.image.feature }}" />
+          </div>
         {% endif %}
-        <span class="post-meta" itemprop="datePublished" content="{{ post.date }}">{{ post.date | date: "%b %-d, %Y" }}</span>
-        {% if post.comments %}
-          <span class="post-meta">
-            <a href="{{ post.url }}index.html#disqus_thread" data-disqus-identifier="{{ post.url }}"></a>
-          </span>
-        {% endif %}
-        <span itemprop="text">{{ post.excerpt }}</span>
+        <div class="post-list-text">
+          <span itemprop="text" class="post-list-excerpt">{{ post.excerpt }}</span>
+        </div>
       </li>
     {% endfor %}
   </ul>
