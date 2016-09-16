@@ -11,12 +11,16 @@ twitter_username: kennynamgyal
 markdown: kramdown
 excerpt_separator: "<!--more-->"
 permalink: pretty
+gems:
+    - jekyll-coffeescript
+    # - jekyll-twitter-plugin
 exclude: ['Rakefile','Capfile','config','env.rb']
 defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-      type: "posts" # previously `post` in Jekyll 2.2.
-    values:
-      comments: True
+    -
+        scope:
+            path: "" # an empty string here means all files in the project
+            type: "posts" # previously `post` in Jekyll 2.2.
+        values:
+            comments: True
 
+#twitter: // Add twitter key, secret, token and token secret
