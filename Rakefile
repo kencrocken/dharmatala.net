@@ -96,7 +96,9 @@ task :tweet do
     config.access_token_secret = "#{ACCESS_TOKEN_SECRET}"
   end
 
-  tweet = "#{content} // #{post_title} #{short_url} #{hashtags}"
+  # tweet = "#{content} // #{post_title} #{short_url} #{hashtags}"
+  tweet = "#{content} #{short_url} #{hashtags}"
+
   count = tweet.length
 
   if !images.empty?
