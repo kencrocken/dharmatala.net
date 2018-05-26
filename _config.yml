@@ -11,9 +11,7 @@ twitter_username: kennynamgyal
 markdown: kramdown
 excerpt_separator: "<!--more-->"
 permalink: pretty
-gems:
-    - jekyll-coffeescript
-    # - jekyll-twitter-plugin
+
 exclude: ['Rakefile','Capfile','config','env.rb']
 defaults:
     -

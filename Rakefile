@@ -2,11 +2,11 @@ require 'rubygems'
 require 'rake'
 require 'yaml'
 require 'time'
-require 'twitter'
-require 'google_url_shortener'
+# require 'twitter'
+# require 'google_url_shortener'
 require 'open-uri'
 
-require File.join(File.dirname(__FILE__), 'env')
+# require File.join(File.dirname(__FILE__), 'env')
 
 
 SOURCE = "."
@@ -36,7 +36,7 @@ task :post do
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  
+
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
     post.puts "---"
@@ -104,7 +104,7 @@ task :tweet do
   if !images.empty?
     OpenURI::Buffer.send :remove_const, 'StringMax' if OpenURI::Buffer.const_defined?('StringMax')
     OpenURI::Buffer.const_set 'StringMax', 0
-    
+
     puts images
     media = open(images)
     client.update_with_media(tweet, media)
