@@ -13,6 +13,10 @@ excerpt_separator: "<!--more-->"
 permalink: pretty
 
 exclude: ['Rakefile','Capfile','config','env.rb']
+
+plugins:
+    - jekyll-coffeescript
+    
 defaults:
     -
         scope:
